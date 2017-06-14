@@ -29,7 +29,7 @@ namespace ArrayPractice
         {
             int[] test = {2, 668888886, 8};
             Display(test);
-            return;
+            Console.WriteLine();
             int[,] array = new int[2, 6]
             {
                 { 10, 11, 12, 13, 14, 15 },
