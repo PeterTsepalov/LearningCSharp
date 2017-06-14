@@ -12,11 +12,11 @@ namespace ArraysSpeedConsole
         static void Main(string[] args)
         {
             Stopwatch sw = new Stopwatch();
-            
             const int maxSise = 10000;
             int value;
             int[,] rectangular = new int[maxSise, maxSise];
             int[][] jagged = new int[maxSise][];
+
             for (int i = 0; i < maxSise; i++)
             {
                 jagged[i] = new int[maxSise];
