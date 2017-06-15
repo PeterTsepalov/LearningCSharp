@@ -23,9 +23,9 @@ namespace ArrayPractice
         static void Display(int[,] array)
         {
             //Iteration template
-            for (int i = 0; i < array.Rank; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array.GetLength(i); j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {                    
                     Console.WriteLine("{0} {1}", i,j);
                 }
@@ -36,13 +36,12 @@ namespace ArrayPractice
 
         static void Main(string[] args)
         {
-            int[] test = {2, 668888886, 8};
-            Display(test);
-            Console.WriteLine();
-            int[,] array = new int[2, 3]
+            int[,] array =
             {
-                { 10, 11, 12/*, 13, 14, 15*/ },
-                { 16, 17, 18 /*, 19, 20, 21*/ }
+                { 1, 11, 12/*, 13, 14, 15*/ },
+                { 16, 17, 18 /*, 19, 20, 21*/ },
+                { 16, 17, 18 /*, 19, 20, 21*/ },
+                { 16, 617, 18 /*, 19, 20, 21*/ }
             };
             Display(array);
         }
