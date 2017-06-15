@@ -36,12 +36,13 @@ namespace ArrayPractice
 
         static void Main()
         {
-            int[,] array =
+            int[] test = {2, 6, 8};
+            Display(test);
+            Console.WriteLine();
+            int[,] array = new int[2, 3]
             {
-                {1, 11, 12 /*, 13, 14, 15*/},
-                {16, 17, 18 /*, 19, 20, 21*/},
-                {16, 14534267, 18 /*, 19, 20, 21*/},
-                {16, 6187, 18 /*, 19, 20, 21*/}
+                { 10, 11, 12 },
+                { 16, 17, 18 }
             };
             Display(array);
             Console.ReadKey();
