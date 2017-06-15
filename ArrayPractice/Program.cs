@@ -1,49 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArrayPractice
 {
     class Program
-    {
-        static void Display(int[] array)
-        {            
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (i > 0)
-                {
-                    Console.Write(", ");
-                }
-                Console.Write(array[i]);            
-            }
-            Console.WriteLine();
-        }
+    {        
         static void Display(int[,] array)
         {
-            //Iteration template
+            var maxValue = GetMaxValue(array);
+            int padding = maxValue.ToString().Length + 2;
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
-                {                    
-                    Console.WriteLine("{0} {1}", i,j);
+                {
+                    Console.Write(array[i, j].ToString().PadLeft(padding));
                 }
+                Console.WriteLine();
             }
-            int p = 711;
-            string padded = p.ToString().PadLeft(6); // Padding example: padded = "  711"; 
         }
 
-        static void Main(string[] args)
+        static int GetMaxValue(int[,] array)
+        {
+            int maxValue = int.MinValue;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (maxValue < array[i, j])
+                    {
+                        maxValue = array[i, j];
+                    }
+                }
+            }
+            return maxValue;
+        }       
+
+        static void Main()
         {
             int[,] array =
             {
-                { 1, 11, 12/*, 13, 14, 15*/ },
-                { 16, 17, 18 /*, 19, 20, 21*/ },
-                { 16, 17, 18 /*, 19, 20, 21*/ },
-                { 16, 617, 18 /*, 19, 20, 21*/ }
+                {1, 11, 12 /*, 13, 14, 15*/},
+                {16, 17, 18 /*, 19, 20, 21*/},
+                {16, 14534267, 18 /*, 19, 20, 21*/},
+                {16, 6187, 18 /*, 19, 20, 21*/}
             };
             Display(array);
+            Console.ReadKey();
         }
     }
 }
